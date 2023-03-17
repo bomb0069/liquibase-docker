@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: initial
+      author: bomb0069
+      changes:
+        - sqlFile:
+            path: changelog/initial_data/structure-migration.sql
+        - sqlFile:
+            path: changelog/initial_data/prod-data-migration.sql
+        - rollback:
+            - sqlFile:
+                path: changelog/initial_data/prod-data-rollback.sql
+            - sqlFile:
+                path: changelog/initial_data/structure-rollback.sql
